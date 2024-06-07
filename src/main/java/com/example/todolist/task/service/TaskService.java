@@ -1,5 +1,7 @@
-package com.example.todolist.task;
+package com.example.todolist.task.service;
 
+import com.example.todolist.task.entity.TaskEntity;
+import com.example.todolist.task.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +15,7 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public List<Task> getTasks() {
+    public List<TaskEntity> getTasks() {
         return taskRepository.findAll();
     }
 }
