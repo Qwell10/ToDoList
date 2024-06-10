@@ -1,5 +1,6 @@
 package com.example.todolist.task.controller;
 
+import com.example.todolist.task.entity.UserEntity;
 import com.example.todolist.task.repository.TaskRepository;
 import com.example.todolist.task.service.TaskService;
 import com.example.todolist.task.entity.TaskEntity;
@@ -16,6 +17,12 @@ public class TaskController {
     private TaskService taskService;
     @Autowired
     private TaskRepository taskRepository;
+
+
+    @PostMapping("newUser")
+    public UserEntity createUser(@RequestBody UserEntity newUser) {
+        return taskRepository.save(newUser);
+    }
 
     @GetMapping("get")
     public List<TaskEntity> getTask() {
