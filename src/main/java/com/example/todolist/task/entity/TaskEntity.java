@@ -31,10 +31,9 @@ public class TaskEntity {
     @ManyToOne
     private UserEntity userEntity;
 
-    public TaskEntity(String taskName, String description, Boolean finished, UserEntity userEntity) {
+    public TaskEntity(String taskName, String description, Boolean finished) {
         this.taskName = taskName;
         this.description = description;
         this.finished = finished;
-        this.userEntity = userEntity;
     }
 }

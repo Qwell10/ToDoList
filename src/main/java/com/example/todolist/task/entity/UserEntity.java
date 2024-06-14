@@ -27,8 +27,13 @@ public class UserEntity {
             generator = "userEntity_sequence"
     )
     private long id;
-    private String name;
-    private String surname;
+    private String nickname;
+    private String password;
     @OneToMany(mappedBy = "userEntity")
     private List<TaskEntity> tasks;
+
+    public UserEntity(String nickname, String password) {
+        this.nickname = nickname;
+        this.password = password;
+    }
 }
