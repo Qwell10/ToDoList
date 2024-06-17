@@ -1,4 +1,4 @@
-package com.example.todolist.task;
+package com.example.todolist.task.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Task {
+public class TaskEntity {
 
     @Id
     @SequenceGenerator(
@@ -28,12 +28,12 @@ public class Task {
     private String taskName;
     private String description;
     private Boolean finished;
+    @ManyToOne
+    private UserEntity userEntity;
 
-    public Task(String taskName, String description, Boolean finished) {
+    public TaskEntity(String taskName, String description, Boolean finished) {
         this.taskName = taskName;
         this.description = description;
         this.finished = finished;
     }
-
-    
 }
